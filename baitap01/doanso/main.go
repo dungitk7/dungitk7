@@ -18,7 +18,7 @@ func readNumberFromKeyboard(msg string) (int, error) { //func đọc số từ b
 	str = strings.Trim(str, "\n")    // cắt bỏ \n sau string nhập vào. Ví dụ: 5\n -> 5
 	number, err := strconv.Atoi(str) // convert number từ string sang int
 
-	if err != nil { // func trả ra l
+	if err != nil { // func trả ra lỗi
 		return 0, err
 	}
 	return number, nil
