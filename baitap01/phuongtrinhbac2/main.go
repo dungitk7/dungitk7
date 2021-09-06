@@ -20,11 +20,11 @@ func main() {
 	c, err := readNumberFromKeyboard("Giá trị của c: ")
 	checkErr(err)
 
-	_, _ = quadratics(a, b, c)
+	quadratics(a, b, c)
 
 }
 
-func readNumberFromKeyboard(msg string) (float64, error) {
+func readNumberFromKeyboard(msg string) (float64, error) { //Func để nhập số từ bàn phím
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print(msg)
 	str, _ := reader.ReadString('\n')
@@ -36,14 +36,14 @@ func readNumberFromKeyboard(msg string) (float64, error) {
 	return number, nil
 }
 
-func checkErr(err error) {
+func checkErr(err error) { //func check error input nhập vào
 	if err != nil {
 		fmt.Printf("[Error]: %s", err)
 		os.Exit(1)
 	}
 }
 
-func quadratics(a, b, c float64) (float64, float64) {
+func quadratics(a, b, c float64) { // func để giải phương trình
 	delta := (b * b) - (4 * a * c)
 
 	switch {
@@ -61,5 +61,4 @@ func quadratics(a, b, c float64) (float64, float64) {
 		x2 := complex(-b/(2*a), -math.Sqrt(-delta)/(2*a))
 		fmt.Printf("Phương trình có 2 nghiệm ở dạng số phức: x1 = %v, x2 = %v", x1, x2)
 	}
-	return 0, 0
 }

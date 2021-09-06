@@ -10,27 +10,15 @@ import (
 	"time"
 )
 
-func readNumberFromKeyboard(msg string) (int, error) {
+func readNumberFromKeyboard(msg string) (int, error) { //func đọc số từ bàn phím
 
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print(msg)
 	str, _ := reader.ReadString('\n')
-	str = strings.Trim(str, "\n")
-	number, err := strconv.Atoi(str)
+	str = strings.Trim(str, "\n")    // cắt bỏ \n sau string nhập vào. Ví dụ: 5\n -> 5
+	number, err := strconv.Atoi(str) // convert number từ string sang int
 
-	rand.Seed(time.Now().UnixNano())
-	numrand := rand.Intn(100)
-
-	switch {
-	case number < numrand:
-		fmt.Printf("Số bạn nhập nhỏ hơn : %v", numrand)
-	case number > numrand:
-		fmt.Printf("Số bạn nhập lớn hơn : %v", numrand)
-	case number == numrand:
-		fmt.Printf("Bạn đã đoán đúng : %v", numrand)
-	}
-
-	if err != nil {
+	if err != nil { // func trả ra l
 		return 0, err
 	}
 	return number, nil
@@ -48,4 +36,15 @@ func main() {
 	checkErr(err)
 	fmt.Printf("Number: %v", r)
 
+	rand.Seed(time.Now().UnixNano())
+	numrand := rand.Intn(100)
+
+	switch {
+	case r < numrand:
+		fmt.Printf("Số bạn nhập nhỏ hơn : %v", numrand)
+	case r > numrand:
+		fmt.Printf("Số bạn nhập lớn hơn : %v", numrand)
+	case r == numrand:
+		fmt.Printf("Bạn đã đoán đúng : %v", numrand)
+	}
 }
