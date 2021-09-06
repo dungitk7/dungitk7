@@ -10,41 +10,7 @@ import (
 )
 
 func main() {
-	/*var (
-		err error
-		a   float64
-		b   float64
-		c   float64
-	)
 
-		reader := bufio.NewReader(os.Stdin)
-		fmt.Print("Enter number a :")
-		str, _ := reader.ReadString('\n')
-		str = strings.TrimSuffix(str, "\n")
-		fmt.Print(str)
-		if a, err = strconv.ParseFloat(str, 64); err != nil {
-			fmt.Println(err.Error())
-			return
-		}
-
-		fmt.Print("Enter number b :")
-		str, _ = reader.ReadString('\n')
-		str = strings.TrimSuffix(str, "\n")
-		fmt.Print(str)
-		if b, err = strconv.ParseFloat(str, 64); err != nil {
-			fmt.Println(err.Error())
-			return
-		}
-
-		fmt.Print("Enter number c :")
-		str, _ = reader.ReadString('\n')
-		str = strings.TrimSuffix(str, "\n")
-		fmt.Print(str)
-		if c, err = strconv.ParseFloat(str, 64); err != nil {
-			fmt.Println(err.Error())
-			return
-		}
-	*/
 	a, err := readNumberFromKeyboard("Giá trị của a: ")
 	checkErr(err)
 
