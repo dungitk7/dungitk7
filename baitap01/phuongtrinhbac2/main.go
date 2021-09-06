@@ -50,7 +50,6 @@ func quadratics(a, b, c float64) { // func để giải phương trình
 	case delta > 0:
 		x1 := (-b + math.Sqrt(delta)) / 2 * a
 		x2 := (-b - math.Sqrt(delta)) / 2 * a
-		//fmt.Println("x1 = ", x1, "x2 = ", x2) // Sau khi khai báo x1,x2 -> Cần in ra giá trị
 		fmt.Printf("Phương trình có 2 nghiệm: x1 = %v, x2 = %v", x1, x2)
 	case delta == 0:
 		x1 := (-b / 2 * a)
